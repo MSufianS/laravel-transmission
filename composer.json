@@ -1,0 +1,70 @@
+{
+    "name": "pianoly/laravel-transmission",
+    "type": "library",
+    "description": "A Transmission-RPC API SDK for PHP with Laravel Support",
+    "keywords": [
+        "transmission",
+        "transmission api sdk",
+        "transmission-rpc",
+        "php-transmission-sdk",
+        "laravel transmission",
+        "php transmission client"
+    ],
+    "homepage": "https://github.com/pianoly/laravel-transmission",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Syed I.R.",
+            "email": "gh@lukonet.com",
+            "homepage": "https://github.com/pianoly",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : "^7.2",
+        "nesbot/carbon": "^2.5",
+        "illuminate/support": "^5.5 || ^6.0 || ^7.2",
+        "psr/http-client": "^1.0",
+        "php-http/discovery": "^1.6",
+        "php-http/client-common": "^2.0",
+        "php-http/client-implementation": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "^8.0",
+        "nyholm/psr7": "^1.1",
+        "php-http/guzzle6-adapter": "^2.0",
+        "php-http/mock-client": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Transmission\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Transmission\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "phpunit --coverage-html coverage"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Transmission\\Laravel\\ServiceProvider"
+            ],
+            "aliases": {
+                "Transmission": "Transmission\\Laravel\\Facade"
+            }
+        }
+    }
+}
